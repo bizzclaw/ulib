@@ -118,7 +118,7 @@ function ucl.saveUsers()
 	ULib.fileWrite( ULib.UCL_USERS, ULib.makeKeyValues( ucl.users ) )
 end
 
-local function reloadGroups()
+function ucl.reloadGroups()
 	-- Try to read from the safest locations first
 	local noMount = true
 	local path = ULib.UCL_GROUPS
@@ -210,9 +210,9 @@ local function reloadGroups()
 		ucl.saveGroups()
 	end
 end
-reloadGroups()
+ucl.reloadGroups()
 
-local function reloadUsers()
+function ucl.reloadUsers()
 	-- Try to read from the safest locations first
 	local noMount = true
 	local path = ULib.UCL_USERS
@@ -296,7 +296,7 @@ local function reloadUsers()
 		ucl.saveUsers()
 	end
 end
-reloadUsers()
+ucl.reloadUsers()
 
 
 --[[
